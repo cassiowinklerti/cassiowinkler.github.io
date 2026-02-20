@@ -1,52 +1,225 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cássio Winkler | Contato</title>
 
-    <!-- Título para SEO -->
-    <title>Cássio Winkler - Profissional de TI | LinkedIn</title>
+<meta name="description" content="Entre em contato com Cássio Winkler.">
+<meta name="robots" content="index, follow">
 
-    <!-- Meta description -->
-    <meta name="description" content="Cássio Winkler, profissional de TI e Analista de Sistemas. Veja meu perfil completo no LinkedIn.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <!-- Meta keywords (opcional) -->
-    <meta name="keywords" content="Cássio Winkler, Analista de Sistemas, TI, Tecnologia da Informação, LinkedIn">
+<style>
+:root {
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+    --bg: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
 
-    <!-- Redirecionamento automático após 2 segundos -->
-    <meta http-equiv="refresh" content="2;url=https://www.linkedin.com/in/cassiowinklerti">
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <!-- Open Graph (para redes sociais) -->
-    <meta property="og:title" content="Cássio Winkler - Profissional de TI">
-    <meta property="og:description" content="Cássio Winkler, Analista de Sistemas. Veja meu perfil completo no LinkedIn.">
-    <meta property="og:url" content="https://cassio.tec.br">
-    <meta property="og:type" content="website">
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg);
+    font-family: 'Inter', sans-serif;
+    padding: 20px;
+}
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Cássio Winkler - Profissional de TI">
-    <meta name="twitter:description" content="Cássio Winkler, Analista de Sistemas. Veja meu perfil completo no LinkedIn.">
+.container {
+    background: #fff;
+    padding: 40px;
+    border-radius: 14px;
+    width: 100%;
+    max-width: 480px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+    position: relative;
+    overflow: hidden;
+}
 
-    <!-- Favicon -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
 
-    <!-- Schema.org para pessoa -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Cássio Winkler",
-      "url": "https://www.linkedin.com/in/cassiowinklerti",
-      "jobTitle": "Analista de Sistemas",
-      "sameAs": [
-        "https://www.linkedin.com/in/cassiowinklerti"
-      ]
-    }
-    </script>
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: var(--primary);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: var(--primary-hover);
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Tela de sucesso */
+.success-screen {
+    position: absolute;
+    inset: 0;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.4s ease;
+}
+
+.success-screen.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.success-screen h2 {
+    margin-bottom: 10px;
+    color: var(--primary);
+}
+
+.success-screen p {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.success-screen button {
+    max-width: 200px;
+}
+</style>
 </head>
+
 <body>
-    <h1>Cássio Winkler</h1>
-    <p>Você será redirecionado para meu perfil no LinkedIn em alguns segundos...</p>
-    <p>Se não for redirecionado, <a href="https://www.linkedin.com/in/cassiowinklerti">clique aqui</a>.</p>
+
+<main class="container">
+
+    <div id="form-area">
+        <h1>Entre em Contato</h1>
+
+        <form id="contact-form">
+            <input type="hidden" name="_gotcha">
+
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input id="nome" name="nome" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input id="email" type="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="mensagem">Mensagem</label>
+                <textarea id="mensagem" name="mensagem" required></textarea>
+            </div>
+
+            <button type="submit" id="submit-btn">Enviar Mensagem</button>
+        </form>
+    </div>
+
+    <!-- Tela personalizada de obrigado -->
+    <div class="success-screen" id="success-screen">
+        <h2>Mensagem enviada! 🚀</h2>
+        <p>Obrigado pelo contato. Responderei o mais breve possível.</p>
+        <button onclick="resetForm()">Enviar nova mensagem</button>
+    </div>
+
+</main>
+
+<script>
+const form = document.getElementById("contact-form");
+const successScreen = document.getElementById("success-screen");
+const submitBtn = document.getElementById("submit-btn");
+
+form.addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    submitBtn.disabled = true;
+    submitBtn.innerText = "Enviando...";
+
+    const data = new FormData(form);
+
+    try {
+        const response = await fetch("https://formspree.io/f/xpqjjkdj", {
+            method: "POST",
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+
+        if (response.ok) {
+            form.reset();
+            successScreen.classList.add("active");
+        } else {
+            alert("Erro ao enviar. Tente novamente.");
+        }
+
+    } catch (error) {
+        alert("Erro de conexão.");
+    }
+
+    submitBtn.disabled = false;
+    submitBtn.innerText = "Enviar Mensagem";
+});
+
+function resetForm() {
+    successScreen.classList.remove("active");
+}
+</script>
+
 </body>
 </html>
