@@ -16,6 +16,8 @@
 :root {
     --primary: #2563eb;
     --primary-hover: #1d4ed8;
+    --linkedin: #0A66C2;
+    --linkedin-hover: #004182;
     --bg: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
 }
 
@@ -38,10 +40,10 @@ body {
 .container {
     background: #fff;
     padding: 40px;
-    border-radius: 14px;
+    border-radius: 16px;
     width: 100%;
-    max-width: 480px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+    max-width: 520px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.25);
     position: relative;
     overflow: hidden;
 }
@@ -104,6 +106,58 @@ button:disabled {
     cursor: not-allowed;
 }
 
+/* ===== LINKEDIN CARD PREMIUM ===== */
+
+.linkedin-card {
+    margin-top: 35px;
+    padding: 22px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #0A66C2, #004182);
+    color: #fff;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(10,102,194,0.35);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.linkedin-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 45px rgba(10,102,194,0.45);
+}
+
+.linkedin-icon {
+    width: 42px;
+    height: 42px;
+    margin-bottom: 12px;
+}
+
+.linkedin-card h3 {
+    margin-bottom: 8px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.linkedin-card p {
+    font-size: 14px;
+    opacity: 0.9;
+    margin-bottom: 18px;
+}
+
+.linkedin-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #ffffff;
+    color: #0A66C2;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.linkedin-btn:hover {
+    background: #f0f4ff;
+    transform: scale(1.05);
+}
+
 /* Tela de sucesso */
 .success-screen {
     position: absolute;
@@ -138,6 +192,13 @@ button:disabled {
 .success-screen button {
     max-width: 200px;
 }
+
+/* Responsivo */
+@media (max-width: 480px) {
+    .container {
+        padding: 30px 20px;
+    }
+}
 </style>
 </head>
 
@@ -168,9 +229,25 @@ button:disabled {
 
             <button type="submit" id="submit-btn">Enviar Mensagem</button>
         </form>
+
+        <!-- LINKEDIN CARD PERSONALIZADO -->
+        <div class="linkedin-card">
+            <svg class="linkedin-icon" viewBox="0 0 24 24" fill="white">
+                <path d="M4.98 3.5C4.98 4.88 3.87 6 2.49 6S0 4.88 0 3.5 1.11 1 2.49 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4zM8.5 8h3.8v2.2h.05c.53-1 1.83-2.2 3.77-2.2 4.03 0 4.78 2.65 4.78 6.1V24h-4v-7.8c0-1.86-.03-4.25-2.6-4.25-2.6 0-3 2.03-3 4.1V24h-4z"/>
+            </svg>
+
+            <h3>Conecte-se comigo no LinkedIn</h3>
+            <p>Acompanhe minha trajetória profissional e projetos.</p>
+
+            <a href="https://www.linkedin.com/in/cassiowinklerti/"
+               target="_blank"
+               class="linkedin-btn">
+               Ver Perfil
+            </a>
+        </div>
+
     </div>
 
-    <!-- Tela personalizada de obrigado -->
     <div class="success-screen" id="success-screen">
         <h2>Mensagem enviada! 🚀</h2>
         <p>Obrigado pelo contato. Responderei o mais breve possível.</p>
